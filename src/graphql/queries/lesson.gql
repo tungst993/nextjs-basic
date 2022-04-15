@@ -1,0 +1,8 @@
+query lesson($id: String!){
+    lesson(id: $id){
+        id
+        name
+        startDate
+        endDate
+    }
+}

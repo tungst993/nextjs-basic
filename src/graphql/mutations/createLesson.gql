@@ -1,0 +1,8 @@
+mutation createLesson($name: String!, $startDate: String!, $endDate: String!){
+    createLesson(name: $name, startDate: $startDate, endDate: $endDate){
+        id
+        name
+        startDate
+        endDate
+    }
+}
