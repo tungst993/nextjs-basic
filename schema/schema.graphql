@@ -1,10 +1,17 @@
 type Mutation {
   createLesson(name: String!, startDate: String!, endDate: String!): lesson!
+  signUp(username: String!, password: String!): user!
+  signIn(username: String!, password: String!): jwt!
 }
 
 type Query {
   lessons: [lesson!]!
   lesson(id: String!): lesson!
+  test: [user!]!
+}
+
+type jwt {
+  accessToken: String!
 }
 
 type lesson {
@@ -12,4 +19,10 @@ type lesson {
   name: String!
   startDate: String!
   endDate: String!
+}
+
+type user {
+  id: ID!
+  username: String!
+  password: String!
 }

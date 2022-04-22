@@ -18,6 +18,8 @@ export type Scalars = {
 export type Mutation = {
   __typename?: "Mutation";
   createLesson: Lesson;
+  signUp: User;
+  signIn: Jwt;
 };
 
 export type MutationCreateLessonArgs = {
@@ -26,14 +28,30 @@ export type MutationCreateLessonArgs = {
   endDate: Scalars["String"];
 };
 
+export type MutationSignUpArgs = {
+  username: Scalars["String"];
+  password: Scalars["String"];
+};
+
+export type MutationSignInArgs = {
+  username: Scalars["String"];
+  password: Scalars["String"];
+};
+
 export type Query = {
   __typename?: "Query";
   lessons: Array<Lesson>;
   lesson: Lesson;
+  test: Array<User>;
 };
 
 export type QueryLessonArgs = {
   id: Scalars["String"];
+};
+
+export type Jwt = {
+  __typename?: "jwt";
+  accessToken: Scalars["String"];
 };
 
 export type Lesson = {
@@ -42,4 +60,11 @@ export type Lesson = {
   name: Scalars["String"];
   startDate: Scalars["String"];
   endDate: Scalars["String"];
+};
+
+export type User = {
+  __typename?: "user";
+  id: Scalars["ID"];
+  username: Scalars["String"];
+  password: Scalars["String"];
 };
